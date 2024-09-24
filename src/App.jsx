@@ -61,11 +61,11 @@ function App() {
 
   return (
     <>
-     <main className='flex justify-center items-center w-full h-screen bg-gray-600'>
+     <main className='flex justify-center items-center w-full h-screen bg-red-600'>
         <section className='w-[350px] h-[600px] flex justify-top p-[25px] items-center flex-col rounded'>
             <h1 className='text-[26px] font-semibold'>Simple interest App</h1>
             <p className='text-gray-800 mb-[25px]'>calculate your simple interest easily</p>
-            <div className='w-[260px] h-[140px] bg-gray-400 mb-[30px] flex justify-center items-center flex-col text-white rounded'>
+            <div className='w-[260px] h-[140px] bg-red-400 mb-[30px] flex justify-center items-center flex-col text-white rounded'>
               <h3 className='text-[22px] font-semibold'><i className="fa-solid fa-indian-rupee-sign text-[19px]"></i>{interest}  </h3>
               <p>Total simple interest</p>
             </div>
@@ -79,13 +79,10 @@ function App() {
             <input className='w-[260px] h-[40px] my-[10px] rounded border border-gray-300 pl-[10px]' type="text" value={year} name='time' onChange={(event) => {validate(event)}} />
             {!isYear  && <span className='-ml[10px text-red-200'>*invalid input</span>}
             <div className='w-[260px] h-[100px] flex justify-between items-center'>
-              <button className='btn btn-primary' disabled={true}  onClick={handleCalculate} >Calculate</button>
+              <button className='btn btn-primary' disabled={isPrinciple && isRate && isYear?false:true}  onClick={handleCalculate} >Calculate</button>
               <button className='bg-gray-900 text-white font-semibold px-[16px] py-[8px] rounded' onClick={handleReset} >Reset</button>
             </div>
-
         </section>
-
-       
      </main>    
     </>
   )
