@@ -48,6 +48,7 @@ function App() {
     setPrinciple('')
     setRate('')
     setYear('')
+    setInterest('0')
     setIsPrinciple(true)
     setIsRate(true)
     setIsYear(true)
